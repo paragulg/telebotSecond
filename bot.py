@@ -19,8 +19,6 @@ def translate(message):
             translator = Translator()
             translateText = translator.translate(message.text, dest='ru')
             bot.send_message(message.chat.id, text=translateText.text)
-            msg = bot.send_message(message.chat.id, text='Введите текст:')
-            bot.register_next_step_handler(msg, trans)
         msg = bot.send_message(message.chat.id, text='Введите текст:')
         bot.register_next_step_handler(msg, trans)
     elif(message.text =='Английский🇬🇧'):
@@ -28,8 +26,6 @@ def translate(message):
             translator = Translator()
             translateText = translator.translate(message.text, dest='en')
             bot.send_message(message.chat.id, text=translateText.text)
-            msg = bot.send_message(message.chat.id, text='Введите текст:')
-            bot.register_next_step_handler(msg, trans)
         msg = bot.send_message(message.chat.id, text='Введите текст:')
         bot.register_next_step_handler(msg, trans)
 
