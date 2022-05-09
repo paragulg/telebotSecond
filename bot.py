@@ -9,7 +9,9 @@ def start(message):
     markup = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
     btn1 = telebot.types.KeyboardButton('Русский🇷🇺')
     btn2 = telebot.types.KeyboardButton('Английский🇬🇧')
-    markup.add(btn1, btn2)
+    btn3 = telebot.types.KeyboardButton('Арабский🇸🇦')
+    btn4 = telebot.types.KeyboardButton('Итальянский🇮🇹')
+    markup.add(btn1, btn2, btn3, btn4)
     bot.send_message(message.chat.id, text='Привет, {0.first_name}!\nВыбери язык, на который нужен перевод текста: '.format(message.from_user), reply_markup=markup)
 
 @bot.message_handler(content_types='text')
