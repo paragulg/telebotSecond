@@ -14,19 +14,43 @@ def start(message):
 
 @bot.message_handler(content_types='text')
 def translate(message):
-    if(message.text == 'Русский🇷🇺'):
-        def trans(message):
-            translator = Translator()
-            translateText = translator.translate(message.text, dest='ru')
-            bot.send_message(message.chat.id, text=translateText.text)
-        msg = bot.send_message(message.chat.id, text='Введите текст:')
-        bot.register_next_step_handler(msg, trans)
-    elif(message.text =='Английский🇬🇧'):
-        def trans(message):
-            translator = Translator()
-            translateText = translator.translate(message.text, dest='en')
-            bot.send_message(message.chat.id, text=translateText.text)
-        msg = bot.send_message(message.chat.id, text='Введите текст:')
-        bot.register_next_step_handler(msg, trans)
+    try:
+        if(message.text == 'Русский🇷🇺'):
+            def trans(message):
+                translator = Translator()
+                translateText = translator.translate(message.text, dest='ru')
+                bot.send_message(message.chat.id, text=translateText.text)
+            msg = bot.send_message(message.chat.id, text='Введите текст:')
+            bot.register_next_step_handler(msg, trans)
+        elif(message.text =='Английский🇬🇧'):
+            def trans(message):
+                translator = Translator()
+                translateText = translator.translate(message.text, dest='en')
+                bot.send_message(message.chat.id, text=translateText.text)
+            msg = bot.send_message(message.chat.id, text='Введите текст:')
+            bot.register_next_step_handler(msg, trans)
+        elif(message.text =='Арабский🇸🇦'):
+            def trans(message):
+                translator = Translator()
+                translateText = translator.translate(message.text, dest='ar')
+                bot.send_message(message.chat.id, text=translateText.text)
+            msg = bot.send_message(message.chat.id, text='Введите текст:')
+            bot.register_next_step_handler(msg, trans)
+        elif(message.text =='Арабский🇸🇦'):
+            def trans(message):
+                translator = Translator()
+                translateText = translator.translate(message.text, dest='ar')
+                bot.send_message(message.chat.id, text=translateText.text)
+            msg = bot.send_message(message.chat.id, text='Введите текст:')
+            bot.register_next_step_handler(msg, trans)
+        elif(message.text =='Итальянский🇮🇹'):
+            def trans(message):
+                translator = Translator()
+                translateText = translator.translate(message.text, dest='it')
+                bot.send_message(message.chat.id, text=translateText.text)
+            msg = bot.send_message(message.chat.id, text='Введите текст:')
+            bot.register_next_step_handler(msg, trans)
+    except Exception:
+        bot.send_message(message.chat.id, text='Упс... Произошла ошибка, перепроверьте написанный текст.')
 
 bot.polling(none_stop=True)
