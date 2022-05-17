@@ -31,14 +31,7 @@ def translate(message):
                 bot.send_message(message.chat.id, text=translateText.text)
             msg = bot.send_message(message.chat.id, text='Введите текст:')
             bot.register_next_step_handler(msg, trans)
-        elif(message.text =='Арабский🇸🇦'):
-            def trans(message):
-                translator = Translator()
-                translateText = translator.translate(message.text, dest='ar')
-                bot.send_message(message.chat.id, text=translateText.text)
-            msg = bot.send_message(message.chat.id, text='Введите текст:')
-            bot.register_next_step_handler(msg, trans)
-        elif(message.text =='Арабский🇸🇦'):
+        elif(message.text == 'Арабский🇸🇦'):
             def trans(message):
                 translator = Translator()
                 translateText = translator.translate(message.text, dest='ar')
